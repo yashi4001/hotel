@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="Styles/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+      <div class="container">
+        <a class="navbar-brand mr-4" href="/">Hotel</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarToggle">
+          <div class="navbar-nav mr-auto">
+            <a class="nav-item nav-link" href="/customer/dashboard">Home</a>
+            <a class="nav-item nav-link" href="#">About</a>
+          </div>
+          <!-- Navbar Right Side -->
+          <div class="navbar-nav">
+              <a class="nav-item nav-link" href="{{ url_for('users.account') }}">Account</a>
+              <a class="nav-item nav-link" href="/customer/logout">Logout</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+    <h1 class="display-4">List of services available</h1>
+    <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Service ID</th>
+            <th scope="col">Service Name</th>
+            <th scope="col">Service Description</th>
+            <th scope="col">Amount</th>
+          </tr>
+        </thead>
+        <tbody>
+            <% for(var i=0;i<ser.length;i++){ %>
+          <tr>
+            <form class="needs-validation" action="/customer/service" method="POST" novalidate>
+            <th scope="row"><%= ser[i].Service_ID%></th>
+            <td><%= ser[i].Service_Name%></td>
+            <td><%= ser[i].Service_Desc%></td>
+            <td><%= ser[i].Service_Amount%></td>
+            <input type="hidden" name="amount" value="<%= ser[i].Service_Amount%>">
+            <td><button type="submit" class="btn btn-primary">Choose</button></td>
+          </form>
+          </tr>
+          <%}%> 
+        </tbody>
+      </table>
+</body>
+</html>

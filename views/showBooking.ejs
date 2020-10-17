@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show details</title>
+</head>
+<body>
+    <h1>Your Booking details are:</h1>
+    <h3>Booking id:<%= id%></h3>
+    <% for(var i=0;i<results.length;i++){ %>
+        <h3><%= results[i].Booking_Type %> </h3>
+        <h3><%= results[i].Approval %> </h3>
+        <h3><%= results[i].Check_In %> </h3>
+        <h3><%= results[i].Check_Out %> </h3>
+    <%}  %>
+</body>
+</html>

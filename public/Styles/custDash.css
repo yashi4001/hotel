@@ -1,0 +1,43 @@
+.header-title{
+    padding-left: 38%;
+}
+
+.fa{
+    padding-left: 50%;
+}
+
+.options-main{
+    padding-top: 50px;
+    float: left;
+    padding-left: 43%;
+    white-space: nowrap;
+    word-spacing: normal;
+}
+
+.book-status{
+    padding-top: 100px;
+    white-space: nowrap;
+    padding-right: 20%;
+}
+
+.book-status:hover{
+    cursor: pointer;
+}
+
+.fa-question-circle{
+    color: lightseagreen;
+}
+
+ul{
+    list-style-type: none;
+}
+
+.main-form{
+    padding-top: 20px;
+}
+
+li{
+    margin-bottom: 2em;
+    font-size: large;
+    
+}
